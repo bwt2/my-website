@@ -8,7 +8,7 @@ const contentHeadings = document.querySelectorAll('#content > h1');
 const one_rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
 
 navSidebar.style.transform = `translateX(-${navContent.offsetWidth+one_rem}px)`;
-content.style.marginLeft = `${navSidebar.offsetWidth + 2*one_rem}px`;
+content.style.paddingLeft = `${navSidebar.offsetWidth}px`;
 
 let inactive = true;
 navBtnArea.addEventListener("mouseover", () => {
@@ -20,6 +20,18 @@ navBtnArea.addEventListener("mouseover", () => {
     }
     inactive = !inactive;
 })
+    
+document.addEventListener('DOMContentLoaded', () => {
+    content.addEventListener('wheel', (event) => {
+        if (event.deltaY !== 0) {
+            content.scrollBy({
+                left: event.deltaY*5,
+                behavior: 'smooth'
+            });
+            event.preventDefault();
+        }
+    });
+});
 
 content.style.opacity = 1;
 navSidebar.style.opacity = 1;

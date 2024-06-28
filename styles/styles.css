@@ -2,19 +2,17 @@
     --system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 24px;
 }
-  
+
+html {
+    scroll-behavior: smooth;
+    overflow-y: hidden;
+}
+
 body {
     background-color: black;
     font-family: 'Tahoma', var(--system-ui);
 }
 
-.container {
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    scrollbar-width: none;  /* Firefox */
-}
-.container::-webkit-scrollbar { 
-    display: none;  /* Safari and Chrome */
-}
 #body-wrapper {
     margin-top: 1rem;
     display: flex;
@@ -29,6 +27,9 @@ body {
     gap: 1rem;
     opacity: 0;
     transition: transform ease-in-out 0.25s, opacity ease-out 2.5s;
+    background-color: black;
+    padding-right: 1rem;
+    z-index: 1;
 }
 
 .nav-content {
@@ -59,12 +60,18 @@ body {
 
 #content{
     display: flex;
-    flex-direction: column;
+    overflow-x: scroll;
     height: 100vh;
-    width: 75vw;
+    width: 80vw; /* Ensure the container takes full width */
     color: grey;
     opacity: 0;
     transition: opacity 2s ease-in-out;
+    scroll-behavior: smooth; 
+}
+
+#content section {
+    flex: 0 0 100vw; /* Each section takes the full viewport width */
+    padding: 2rem 0; /* Optional: Add some padding for better spacing */
 }
 
 #content h1 {
@@ -96,9 +103,12 @@ body {
 .skills-grid-container {
     margin-top: 1rem;
     margin-bottom: 1rem;
+    width: 75%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    padding: 1rem;
     grid-gap: 1rem;
+    background-color: red;
 }
 
 .skills-grid-container > div{
