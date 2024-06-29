@@ -33,6 +33,7 @@ content.addEventListener('wheel', (event) => {
     }
 });
 
+// fix anchor link offset
 document.querySelectorAll('#nav-sidebar a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -40,7 +41,7 @@ document.querySelectorAll('#nav-sidebar a').forEach(anchor => {
         const targetSection = document.getElementById(targetId);
         
         // Calculate the offset position including some padding
-        const offsetPosition = targetSection.offsetLeft - navSidebar.offsetWidth - one_rem; // Adjust the 20 value as needed
+        const offsetPosition = targetSection.offsetLeft - navSidebar.offsetWidth - one_rem; 
 
         // Smoothly scroll to the offset position
         content.scrollTo({
@@ -50,6 +51,44 @@ document.querySelectorAll('#nav-sidebar a').forEach(anchor => {
     });
 });
 
+// moving textboxes
+const aboutBox = document.querySelector('#about-me > .text-box');
+const aboutMeSection = document.querySelector('#about-me');
+let isDragging = false;
+let offsetX, offsetY;
+
+aboutBox.addEventListener('mousedown', (e) => {
+    e.preventDefault();
+    const aboutBoxRect = aboutBox.getBoundingClientRect();
+
+    isDragging = true;
+
+    // offset of mouse cursor in About Me section
+    offsetX = e.clientX - aboutBoxRect.x;
+    offsetY = e.clientY - aboutBoxRect.y;
+
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', onMouseUp);
+});
+
+function onMouseUp() {
+    isDragging = false;
+    document.removeEventListener('mousemove', onMouseMove);
+    document.removeEventListener('mouseup', onMouseUp);
+}
+
+function onMouseMove(e) {
+    if (!isDragging) return;
+    const aboutMeRect = aboutMeSection.getBoundingClientRect();
+
+    const mouseX = e.clientX - aboutMeRect.x;
+    const mouseY = e.clientY - aboutMeRect.y;
+    
+    const newX = mouseX - offsetX;
+    const newY = mouseY - offsetY - 2*one_rem; // from border radius and padding
+
+    aboutBox.style.transform = `translate(${newX}px, ${newY}px)`;
+}
 
 content.style.opacity = 1;
 navSidebar.style.opacity = 1;
