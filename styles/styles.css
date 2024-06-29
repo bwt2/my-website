@@ -64,30 +64,6 @@ body {
     margin-top: 1rem;
 }
 
-#content{
-    display: flex;
-    overflow-x: scroll;
-    height: 100vh;
-    width: 100vw; 
-    color: grey;
-    opacity: 0;
-    transition: opacity 2s ease-in-out;
-    scroll-behavior: smooth; 
-}
-
-#content section {
-    flex: 0 0 100vw; /* Each section takes the full viewport width */
-    margin-top: 2rem;
-}
-
-#content h1 {
-    color: white;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    font-weight: bold;
-    letter-spacing: .05rem;
-}
-
 #nav-btn {
     background-image: url("../images/nav.svg");
     background-color: transparent;
@@ -99,10 +75,44 @@ body {
     transition: transform ease-in 0.3s;
 }
 
-#projects {
+#content{
     display: flex;
-    justify-content: space-around;
+    overflow-x: scroll;
     height: 100vh;
+    width: 100vw; 
+    color: grey;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    scroll-behavior: smooth; 
+    gap: 1rem;
+}
+
+#content section {
+    margin-top: 2rem;
+}
+
+#content h1 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    letter-spacing: .05rem;
+}
+
+/*** ABOUT ME ***/
+#about-me {
+    flex: 0 0 50vw; /* note: flex-basis determines how much space is allocated for each section */
+}
+
+/*** EXPERIENCE ***/
+#experience {
+    flex: 0 0 50vw;
+}
+
+/*** PROJECTS ***/
+#projects {
+    flex: 0 0 60vw;
+    display: flex;
 }
 
 #projects > .display {
@@ -150,8 +160,13 @@ body {
     }
 }
 
+/*** TECHNICAL-SKILLS ***/
 #technical-skills {
+    flex: 0 0 50vw;
     margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .skills-grid-container {
@@ -161,7 +176,7 @@ body {
     padding-left: 1rem;
     padding-right: 1rem;
     grid-gap: 1rem;
-    width: 50%;
+    width: 75%;
 }
 
 .skills-grid-container > div{
@@ -189,7 +204,6 @@ body {
     transform: translate(-50%, -50%);
     transition: opacity ease-in 0.25s;
     color: white;
-    font-weight: bold;
     font-size: 0.9rem;
     width: 105%;
     background-color: black;
@@ -203,12 +217,16 @@ body {
     opacity: 1;
 }
 
+/*** CONTACT ***/
+#contact {
+    flex: 0 0 50vw;
+}
+
 .moveable {
     border: 2px solid var(--main-color);
     border-radius: 1rem;
     padding: 1rem;
     align-self: flex-start; 
-    width: 50%;
     background-color: var(--main-bg-color);
 }
 

@@ -9,6 +9,8 @@ const one_rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
 
 navSidebar.style.transform = `translateX(-${navContent.offsetWidth+one_rem}px)`;
 content.style.paddingLeft = `${navSidebar.offsetWidth}px`;
+navBtn.style.transform = 'rotate(-90deg)';
+
 
 let inactive = true;
 navBtnArea.addEventListener("mouseover", () => {
