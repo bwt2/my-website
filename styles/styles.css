@@ -1,5 +1,7 @@
 :root {
     --system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --main-bg-color: #16161a;
+    --main-color: #2cb67d;
     font-size: 24px;
 }
 
@@ -9,12 +11,11 @@ html {
 }
 
 body {
-    background-color: black;
-    font-family: 'Tahoma', var(--system-ui);
+    background-color: var(--main-bg-color);
+    font-family: 'Roboto Mono', var(--system-ui);
 }
 
 #body-wrapper {
-    margin-top: 1rem;
     display: flex;
     gap: 1rem;
 }
@@ -44,11 +45,13 @@ body {
 .nav-content li a {
     text-decoration: none;
     color: grey;
+    transition: color ease-in-out 0.25s;
+    font-weight: bold;
 }
 
 .nav-content li a:hover {
     text-decoration: none;
-    color: white;
+    color: var(--main-color);
 }
 
 .nav-btn-area {
