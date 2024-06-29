@@ -39,7 +39,7 @@ document.querySelectorAll('#nav-sidebar a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
         const targetId = this.getAttribute('href').substring(1);
-        const selector = "#" + targetId + " > .text-box";
+        const selector = "#" + targetId + " .moveable";
 
         const targetSection = document.querySelector(selector);
     
@@ -58,7 +58,7 @@ document.querySelectorAll('#nav-sidebar a').forEach(anchor => {
 });
 
 // moving textboxes
-const textBoxes = document.querySelectorAll('.text-box');
+const textBoxes = document.querySelectorAll('.moveable');
 const sections = document.querySelectorAll('section');
 let isDragging = false;
 let offsetX, offsetY;
@@ -105,11 +105,38 @@ function onMouseMove(e) {
     const sectionRect = section.getBoundingClientRect();
 
     const newLeft = e.clientX - offsetX - sectionRect.x;
-    const newTop = e.clientY - offsetY - sectionRect.y - 2*one_rem;
+    const newTop = e.clientY - offsetY - sectionRect.y;
 
     activeTextBox.style.transform = `translate(${newLeft}px, ${newTop}px)`;
     console.log(activeTextBox.getBoundingClientRect());
 }
+
+// load project images
+const imageTrack = document.querySelector("#projects > .project-track");
+const imagePaths = [
+    "../images/projects/1.jpg",
+    "../images/projects/2.jpg",
+    "../images/projects/3.jpg",
+    "../images/projects/4.jpg",
+    "../images/projects/5.jpg",
+    "../images/projects/6.jpg",
+    "../images/projects/7.jpg",
+    "../images/projects/8.jpg",
+] // image source https://www.pexels.com/
+
+function loadImages(){
+    for (let i = 0; i < 2; i++) { // Loop twice for seamless scrolling
+        for (let imagePath of imagePaths) {
+            const currImage = document.createElement("img");
+            currImage.draggable = false;
+            currImage.src = imagePath;
+            currImage.classList.add("project-track-item");
+            imageTrack.appendChild(currImage);
+        }
+    }
+}
+
+loadImages();
 
 content.style.opacity = 1;
 navSidebar.style.opacity = 1;
