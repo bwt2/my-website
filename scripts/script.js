@@ -83,12 +83,12 @@ textBoxes.forEach(textBox => {
         offsetX = e.clientX - textBoxRect.left;
         offsetY = e.clientY - textBoxRect.top;
 
-        document.addEventListener('mousemove', onMouseMove);
-        document.addEventListener('mouseup', onMouseUp);
+        document.addEventListener('mousemove', navOnMouseMove);
+        document.addEventListener('mouseup', navOnMouseUp);
     });
 });
 
-function onMouseUp() {
+function navOnMouseUp() {
     isDragging = false;
     if (activeTextBox) {
         activeTextBox.style.borderColor = mainColor;
@@ -96,11 +96,11 @@ function onMouseUp() {
         activeTextBox = null;
     }
 
-    document.removeEventListener('mousemove', onMouseMove);
-    document.removeEventListener('mouseup', onMouseUp);
+    document.removeEventListener('mousemove', navOnMouseMove);
+    document.removeEventListener('mouseup', navOnMouseUp);
 }
 
-function onMouseMove(e) {
+function navOnMouseMove(e) {
     if (!isDragging || !activeTextBox) return;
 
     const section = activeTextBox.closest('section');
@@ -108,9 +108,9 @@ function onMouseMove(e) {
 
     const newLeft = e.clientX - offsetX - sectionRect.x;
     const newTop = e.clientY - offsetY - sectionRect.y;
+    console.log(e.clientX, offsetX, sectionRect.x);
 
     activeTextBox.style.transform = `translate(${newLeft}px, ${newTop}px)`;
-    console.log(activeTextBox.getBoundingClientRect());
 }
 
 // load project images
@@ -141,5 +141,29 @@ function loadImages(){
 
 loadImages();
 
+// project detail
+const projectTrackItems = document.querySelectorAll("#projects > .project-track > .project-track-item");
+const projectDisplay = document.querySelector("#projects > .display > .project-display");
+let activeProjectTrackItem = null;
+let imagePath;
+
+projectTrackItems.forEach(projectTrackItem => {
+    projectTrackItem.addEventListener('mouseenter', projectMouseEnter);
+    projectTrackItem.addEventListener('mouseleave', projectMouseLeave);
+});
+
+function projectMouseEnter(e) {
+    const hoveredItem = e.target;
+    imagePath = hoveredItem.getAttribute('src');
+    projectDisplay.src = imagePath;
+    projectDisplay.classList.add('no-border');
+}
+
+function projectMouseLeave() {
+    projectDisplay.src = "";
+    projectDisplay.classList.remove('no-border'); 
+}
+
+// init animations
 content.style.opacity = 1;
 navSidebar.style.opacity = 1;
