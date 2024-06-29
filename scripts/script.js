@@ -41,7 +41,7 @@ document.querySelectorAll('#nav-sidebar a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
         const targetId = this.getAttribute('href').substring(1);
-        const selector = "#" + targetId + " .moveable";
+        const selector = "#" + targetId + " .text-box";
 
         const targetSection = document.querySelector(selector);
     
@@ -112,6 +112,14 @@ function navOnMouseMove(e) {
 
     activeTextBox.style.transform = `translate(${newLeft}px, ${newTop}px)`;
 }
+
+// copy contact to clipboard
+let copyText;
+const contactTextBox = document.querySelector("#contact > .text-box");
+contactTextBox.addEventListener("mousedown", () => {
+    copyText = contactTextBox.textContent.trim().split(/[ ,]+/)[1];
+    navigator.clipboard.writeText(copyText);
+})
 
 // load project images
 const imageTrack = document.querySelector("#projects > .project-track");

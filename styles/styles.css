@@ -5,17 +5,18 @@
     --main-color: #2cb67d;
     --main-color-activated: #6effc3;
     --project-track-color: #16161a;
+    --static-color: #2c84b6;
     font-size: 24px;
 }
 
 html {
     scroll-behavior: smooth;
-    overflow-y: hidden;
 }
 
 body {
     background-color: var(--main-bg-color);
     font-family: 'Roboto Mono', var(--system-ui);
+    overflow-y: hidden;
 }
 
 #body-wrapper {
@@ -94,7 +95,6 @@ body {
 #content h1 {
     color: white;
     font-size: 1.5rem;
-    margin-bottom: 1rem;
     font-weight: bold;
     letter-spacing: .05rem;
 }
@@ -146,7 +146,6 @@ body {
     padding-left: 1rem;
     padding-right: 1rem;
     animation: scroll 10s linear infinite;
-    background-color: var(--project-track-color);
 }
 
 #projects > .project-track:hover {
@@ -232,14 +231,40 @@ body {
 
 /*** CONTACT ***/
 #contact {
-    flex: 0 0 50vw;
+
+}
+
+.contact-header {
+    display: flex;
+    align-items: flex-start;
+}
+
+.contact-header h1 {
+    margin-left: 0;
+}
+
+#copy-icon {
+    position: relative;
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-left: 0.5rem;
+    top: 0.3rem;
 }
 
 .text-box {
-    border: 2px solid var(--main-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid var(--static-color);
     border-radius: 1rem;
     padding: 1rem;
     background-color: var(--main-bg-color);
+    white-space: pre-line;
+    user-select: none; 
+}
+
+.text-box.moveable {
+    border-color: var(--main-color);
 }
 
 .moveable > h1 {
