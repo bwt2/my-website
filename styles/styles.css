@@ -108,7 +108,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     padding: 1rem;
     grid-gap: 1rem;
-    background-color: red;
+    /* background-color: red; */
 }
 
 .skills-grid-container > div{

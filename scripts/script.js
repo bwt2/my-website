@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     content.addEventListener('wheel', (event) => {
         if (event.deltaY !== 0) {
             content.scrollBy({
-                left: event.deltaY*5,
+                left: event.deltaY*3,
                 behavior: 'smooth'
             });
             event.preventDefault();
