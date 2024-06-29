@@ -113,7 +113,7 @@ function onMouseMove(e) {
 
 // load project images
 const imageTrack = document.querySelector("#projects > .project-track");
-const gitUrl = "https://bwt2.github.io/aboutme/images/projects/";
+const gitUrl = "images/projects/";
 const imagePaths = [
     "1.jpg",
     "2.jpg",
