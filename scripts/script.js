@@ -113,15 +113,16 @@ function onMouseMove(e) {
 
 // load project images
 const imageTrack = document.querySelector("#projects > .project-track");
+const gitUrl = "https://bwt2.github.io/aboutme/images/projects/";
 const imagePaths = [
-    "../images/projects/1.jpg",
-    "../images/projects/2.jpg",
-    "../images/projects/3.jpg",
-    "../images/projects/4.jpg",
-    "../images/projects/5.jpg",
-    "../images/projects/6.jpg",
-    "../images/projects/7.jpg",
-    "../images/projects/8.jpg",
+    "1.jpg",
+    "2.jpg",
+    "3.jpg",
+    "4.jpg",
+    "5.jpg",
+    "6.jpg",
+    "7.jpg",
+    "8.jpg"
 ] // image source https://www.pexels.com/
 
 function loadImages(){
@@ -129,7 +130,7 @@ function loadImages(){
         for (let imagePath of imagePaths) {
             const currImage = document.createElement("img");
             currImage.draggable = false;
-            currImage.src = imagePath;
+            currImage.src = gitUrl + imagePath;
             currImage.classList.add("project-track-item");
             imageTrack.appendChild(currImage);
         }
