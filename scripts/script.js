@@ -15,23 +15,41 @@ navBtnArea.addEventListener("mouseover", () => {
     const navContentWidth = navContent.offsetWidth;
     if (inactive) {
         navSidebar.style.transform = 'translateX(0)'; 
+        navBtn.style.transform = 'rotate(90deg)';
     } else {
-        navSidebar.style.transform = `translateX(-${navContentWidth+one_rem}px)`; 
+        navSidebar.style.transform = `translateX(-${navContentWidth+one_rem}px)`;
+        navBtn.style.transform = 'rotate(-90deg)'; 
     }
     inactive = !inactive;
 })
     
-document.addEventListener('DOMContentLoaded', () => {
-    content.addEventListener('wheel', (event) => {
-        if (event.deltaY !== 0) {
-            content.scrollBy({
-                left: event.deltaY*3,
-                behavior: 'smooth'
-            });
-            event.preventDefault();
-        }
+content.addEventListener('wheel', (event) => {
+    if (event.deltaY !== 0) {
+        content.scrollBy({
+            left: event.deltaY*3,
+            behavior: 'smooth'
+        });
+        event.preventDefault();
+    }
+});
+
+document.querySelectorAll('#nav-sidebar a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+        
+        // Calculate the offset position including some padding
+        const offsetPosition = targetSection.offsetLeft - navSidebar.offsetWidth - one_rem; // Adjust the 20 value as needed
+
+        // Smoothly scroll to the offset position
+        content.scrollTo({
+            left: offsetPosition,
+            behavior: 'smooth'
+        });
     });
 });
+
 
 content.style.opacity = 1;
 navSidebar.style.opacity = 1;
