@@ -3,6 +3,7 @@
     --main-bg-color: #16161a;
     --sidebar-bg-color: #0c0c0f;
     --main-color: #2cb67d;
+    --main-color-activated: #6effc3;
     font-size: 24px;
 }
 
@@ -66,7 +67,7 @@ body {
     display: flex;
     overflow-x: scroll;
     height: 100vh;
-    width: 80vw; /* Ensure the container takes full width */
+    width: 100vw; 
     color: grey;
     opacity: 0;
     transition: opacity 2s ease-in-out;

@@ -31,6 +31,7 @@ content.addEventListener('wheel', (event) => {
         });
         event.preventDefault();
     }
+
 });
 
 // fix anchor link offset
@@ -38,10 +39,15 @@ document.querySelectorAll('#nav-sidebar a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
         const targetId = this.getAttribute('href').substring(1);
-        const targetSection = document.getElementById(targetId);
-        
-        // Calculate the offset position including some padding
-        const offsetPosition = targetSection.offsetLeft - navSidebar.offsetWidth - one_rem; 
+        const selector = "#" + targetId + " > .text-box";
+
+        const targetSection = document.querySelector(selector);
+    
+        // Calculate the offset position
+        const offsetPosition =  targetSection.getBoundingClientRect().x 
+            + content.scrollLeft
+            - navSidebar.offsetWidth 
+            - one_rem;
 
         // Smoothly scroll to the offset position
         content.scrollTo({
@@ -52,42 +58,57 @@ document.querySelectorAll('#nav-sidebar a').forEach(anchor => {
 });
 
 // moving textboxes
-const aboutBox = document.querySelector('#about-me > .text-box');
-const aboutMeSection = document.querySelector('#about-me');
+const textBoxes = document.querySelectorAll('.text-box');
+const sections = document.querySelectorAll('section');
 let isDragging = false;
 let offsetX, offsetY;
+let mainColor = "#2cb67d";
+let activatedColor = "#6effc3";
+let activeTextBox = null;
 
-aboutBox.addEventListener('mousedown', (e) => {
-    e.preventDefault();
-    const aboutBoxRect = aboutBox.getBoundingClientRect();
+textBoxes.forEach(textBox => {
+    textBox.addEventListener('mousedown', (e) => {
+        e.preventDefault();
+        const textBoxRect = textBox.getBoundingClientRect();
+        
+        textBox.style.transition = null;
+        textBox.style.borderColor = activatedColor;
+        
+        isDragging = true;
+        activeTextBox = textBox;
 
-    isDragging = true;
+        // Offset of mouse cursor in the section
+        offsetX = e.clientX - textBoxRect.left;
+        offsetY = e.clientY - textBoxRect.top;
 
-    // offset of mouse cursor in About Me section
-    offsetX = e.clientX - aboutBoxRect.x;
-    offsetY = e.clientY - aboutBoxRect.y;
-
-    document.addEventListener('mousemove', onMouseMove);
-    document.addEventListener('mouseup', onMouseUp);
+        document.addEventListener('mousemove', onMouseMove);
+        document.addEventListener('mouseup', onMouseUp);
+    });
 });
 
 function onMouseUp() {
     isDragging = false;
+    if (activeTextBox) {
+        activeTextBox.style.borderColor = mainColor;
+        activeTextBox.style.transition = "border-color ease-in 0.5s";
+        activeTextBox = null;
+    }
+
     document.removeEventListener('mousemove', onMouseMove);
     document.removeEventListener('mouseup', onMouseUp);
 }
 
 function onMouseMove(e) {
-    if (!isDragging) return;
-    const aboutMeRect = aboutMeSection.getBoundingClientRect();
+    if (!isDragging || !activeTextBox) return;
 
-    const mouseX = e.clientX - aboutMeRect.x;
-    const mouseY = e.clientY - aboutMeRect.y;
-    
-    const newX = mouseX - offsetX;
-    const newY = mouseY - offsetY - 2*one_rem; // from border radius and padding
+    const section = activeTextBox.closest('section');
+    const sectionRect = section.getBoundingClientRect();
 
-    aboutBox.style.transform = `translate(${newX}px, ${newY}px)`;
+    const newLeft = e.clientX - offsetX - sectionRect.x;
+    const newTop = e.clientY - offsetY - sectionRect.y - 2*one_rem;
+
+    activeTextBox.style.transform = `translate(${newLeft}px, ${newTop}px)`;
+    console.log(activeTextBox.getBoundingClientRect());
 }
 
 content.style.opacity = 1;
