@@ -1,7 +1,9 @@
-import './Experience.modules.css'
+import styles from './Experience.module.css'
 
 export default function Experience() {
     return (
-      <p>Experience</p>
-   );
+        <div className={styles.container}>
+            <p>Experience</p>
+        </div>
+    );
 }

@@ -1,7 +1,9 @@
-import './Contact.modules.css'
+import styles from './Contact.module.css'
 
 export default function Contact() {
     return (
-      <p>Contact</p>
-   );
+        <div className={styles.container}>
+            <p>Contact</p>
+        </div>
+    );
 }

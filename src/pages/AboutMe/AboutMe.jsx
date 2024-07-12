@@ -1,7 +1,9 @@
-import './AboutMe.modules.css'
+import styles from './AboutMe.module.css'
 
 export default function AboutMe() {
     return (
-      <p>About Me</p>
-   );
+        <div className={styles.container}>
+            <p>About Me</p>
+        </div>
+    );
 }

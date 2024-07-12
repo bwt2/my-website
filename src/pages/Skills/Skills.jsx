@@ -1,7 +1,9 @@
-import './Skills.modules.css'
+import styles from './Skills.module.css'
 
 export default function Skills() {
-    return (
-      <p>Skills</p>
-   );
+   return (
+      <div className={styles.container}>
+          <p>Skills</p>
+      </div>
+  );
 }

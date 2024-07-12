@@ -1,4 +1,4 @@
-import './assets/styles/App.modules.css'
+import AppStyles from './App.module.css'
 import AboutMe from './pages/AboutMe/AboutMe'
 import Experience from './pages/Experience/Experience'
 import Projects from './pages/Projects/Projects'
@@ -7,12 +7,12 @@ import Contact from './pages/Contact/Contact'
 
 export default function App() {
   return (
-  <>
+  <div className={AppStyles.container}>
     <AboutMe></AboutMe>
     <Experience></Experience>
     <Projects></Projects>
     <Skills></Skills>
     <Contact></Contact>
-  </>
+  </div>
  );
 }

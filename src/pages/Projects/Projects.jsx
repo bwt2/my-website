@@ -1,7 +1,9 @@
-import './Projects.modules.css'
+import styles from './Projects.module.css'
 
 export default function Projects() {
-    return (
-      <p>Projects</p>
-   );
+   return (
+      <div className={styles.container}>
+          <p>Projects</p>
+      </div>
+  );
 }
