@@ -1,3 +1,9 @@
 .container {
+    --margin-value: 1rem;
+    width: calc(100% - 2*var(--margin-value)); 
+    margin: 0 var(--margin-value);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
     background-color: blue;
 }
