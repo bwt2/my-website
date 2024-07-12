@@ -1,9 +1,52 @@
+
+/* --margin-value: 1rem;
+width: calc(100% - 2*var(--margin-value)); 
+margin: 0 var(--margin-value); */
+
+/* positioning based on margins + padding */
+/* sizing based on padding */
+
 .container {
-    --margin-value: 1rem;
-    width: calc(100% - 2*var(--margin-value)); 
-    margin: 0 var(--margin-value);
+    width: 100%;
     box-sizing: border-box;
     display: flex;
-    justify-content: center;
+    align-items: flex-start;
+    margin: 10rem;
+    padding: 2rem 0;
+    /* background-color: red; */
+}
+
+.container > .text {
+    align-self: flex-start;
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
+    flex-direction: column;
+    /* background-color: yellow; */
+}
+
+.container > .text > h1 {
+    font-size: 5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    /* background-color: blue; */
+}
+
+.container > .text > h2 {
+    /* background-color: purple; */
+    font-size: 1.25rem;
+    line-height: 2rem;
+}
+
+.container > .display {
+    padding-right: 30%;
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
+    justify-content: flex-start;
     background-color: blue;
+}
+
+.container > .display > .div {
+    
 }
