@@ -51,6 +51,8 @@ table {
 
 /* Global variables */
 :root {
-  --root-bg-color: #242424;
-  --main-text-color: #2cb67d;
+  --root-bg-color: rgb(36, 36, 36);
+  --light-bg-color: rgb(52, 52, 52);
+  --lighter-bg-color: rgb(75, 75, 75);
+  --main-text-color: rgb(44, 182, 125);
 }

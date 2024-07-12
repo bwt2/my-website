@@ -11,7 +11,7 @@ margin: 0 var(--margin-value); */
     box-sizing: border-box;
     display: flex;
     align-items: flex-start;
-    margin: 10rem;
+    margin-top: 5rem;
     padding: 2rem 0;
     /* background-color: red; */
 }

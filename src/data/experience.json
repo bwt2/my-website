@@ -1,0 +1,47 @@
+[
+    {
+      "id": 1,
+      "title": "Service Team Member",
+      "company": "Coles Group",
+      "location": "Sydney, Australia",
+      "start": "2023-02-01",
+      "end": "2023-10-01",
+      "description": "Assisted customers with their inquiries, resolving issues, and ensuring a positive shopping experience. Cleaned spills, maintained store floor, coordinated with a team of service members to maintain store cleanliness and trolley supply throughout the day."
+    },
+    {
+        "id": 2,
+        "title": "Undergraduate Researcher",
+        "company": "University of Sydney",
+        "location": "Sydney, Australia",
+        "start": "2023-08-01",
+        "end": "2023-12-01",
+        "description": "Analyzed MEERKAT radio telescope time series data using various python based astronomy libraries to document changes from a particular fast radio burst from 2019-2022 in collaboration with a research supervisor from the Sydney Institute of Astronomy (SifA) and a fellow student. Interpreted and cleaned data using pandas and numpy, cross checking with literature to narrow down viable theoretical models for the source of the fast radio burst. Expressed results using matplotlib to visualise findings in the form of a report along with sharing the results via public talks to members of a group of researchers and a cohort of physics students and lecturers at the University of Sydney."
+    },
+    {
+        "id": 3,
+        "title": "Undergraduate Researcher",
+        "company": "University of Sydney",
+        "location": "Sydney, Australia",
+        "start": "2024-02-01",
+        "end": "2024-06-01",
+        "description": "Investigating the viability of detecting radio emission from exoplanets by filtering and cross-matching data from the CSIRO ASKAP Science Data Archive (CASDA) alongside NASA's exoplanet catalogue to search for possible jupiter-sized exoplanets emitting radio waves. Filtered through 123 planetary systems harboring radio-emitting exoplanets to find 2 candidate systems that could contain radio-emitting exoplanets via crossmatching radio telescope data and sky survey data."
+    },
+    {
+        "id": 4,
+        "title": "Software (Controls) Developer",
+        "company": "Sydney Interplanetary Rover Initiative",
+        "location": "Sydney, Australia",
+        "start": "2024-04-01",
+        "end": "PRESENT",
+        "description": "Using ros2_control, Rviz, Gazebo, and the surrounding ROS 2 ecosystem to simulate, test, and process operator inputs to produce the appropriate commands to run rover hardware actuators of a real life rover.Using ros2_control, Rviz, Gazebo, and the surrounding ROS 2 ecosystem to simulate, test, and process operator inputs to produce the appropriate commands to run rover hardware actuators of a real life rover."
+    },
+    {
+        "id": 5,
+        "title": "Back End Developer",
+        "company": "Sydney University Cyber Security Society ",
+        "location": "Sydney, Australia",
+        "start": "2024-07-01",
+        "end": "PRESENT",
+        "description": "..."
+    }
+]
