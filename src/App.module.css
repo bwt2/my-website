@@ -6,7 +6,7 @@
   min-width: 10vw;
 }
 
-.main {
+.main  {
   display: flex;
   align-items: center;
   flex-direction: column;

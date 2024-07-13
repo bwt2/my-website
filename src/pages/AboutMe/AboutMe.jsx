@@ -1,8 +1,9 @@
-import styles from './AboutMe.module.css'
+import styles from './AboutMe.module.css';
+import { forwardRef } from 'react';
 
-export default function AboutMe() {
+const AboutMe = forwardRef( function AboutMe(props, ref) {
     return (
-        <div className={styles.container}>
+        <div className={styles.container} ref={ref}>
             <section className={styles.text}>
                 <h1>About Me</h1>
                 <h2>
@@ -16,4 +17,6 @@ export default function AboutMe() {
             </section>
         </div>
     );
-}
+})
+
+export default AboutMe;
