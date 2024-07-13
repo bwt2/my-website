@@ -33,7 +33,7 @@
         "location": "Sydney, Australia",
         "start": "2024-04-01",
         "end": "PRESENT",
-        "description": "Using ros2_control, Rviz, Gazebo, and the surrounding ROS 2 ecosystem to simulate, test, and process operator inputs to produce the appropriate commands to run rover hardware actuators of a real life rover.Using ros2_control, Rviz, Gazebo, and the surrounding ROS 2 ecosystem to simulate, test, and process operator inputs to produce the appropriate commands to run rover hardware actuators of a real life rover."
+        "description": "Using ros2_control, Rviz, Gazebo, and the surrounding ROS 2 ecosystem to simulate, test, and process operator inputs to produce the appropriate commands to run rover hardware actuators of a real life rover. Using ros2_control, Rviz, Gazebo, and the surrounding ROS 2 ecosystem to simulate, test, and process operator inputs to produce the appropriate commands to run rover hardware actuators of a real life rover."
     },
     {
         "id": 5,
@@ -42,6 +42,6 @@
         "location": "Sydney, Australia",
         "start": "2024-07-01",
         "end": "PRESENT",
-        "description": "..."
+        "description": "Designed and implemented Django backend from the ground up for the USYD cybersecurity website."
     }
 ]

@@ -1,10 +1,18 @@
-.container {
+.layout {
+  display: flex;
+}
+
+.nav {
+  min-width: 10vw;
+}
+
+.main {
   display: flex;
   align-items: center;
   flex-direction: column;
   gap: 1rem;
   min-height: 100vh;
-  min-width: 100vw;
+  min-width: 90vw;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   background-color: var(--root-bg-color);
   color: var(--main-text-color);

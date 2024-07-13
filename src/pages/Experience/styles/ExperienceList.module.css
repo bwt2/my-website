@@ -3,8 +3,8 @@
     flex-direction: column;
     gap: 1rem;
     overflow-y: scroll;
-    max-height: 20rem;
-    width: 25%;
+    max-height: 25rem;
+    width: 30%;
     min-width: calc(fit-content + 10%);
 
     display: flex;

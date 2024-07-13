@@ -1,0 +1,13 @@
+.nav {
+    height: 100%;
+    min-width: 10vw;
+
+    background-color: var(--root-bg-color);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 2.5rem;
+    position: fixed;
+}

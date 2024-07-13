@@ -5,7 +5,9 @@ export default function AboutMe() {
         <div className={styles.container}>
             <section className={styles.text}>
                 <h1>About Me</h1>
-                <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique, sed at cumque veniam eius alias incidunt cupiditate obcaecati maxime, facere odit quo nihil rem dolore nostrum saepe, impedit illo nesciunt.</h2>
+                <h2>
+                3rd year undergraduate student at the University of Sydney pursuing a Bachelor of Advanced Computing majoring in Software Development and Physics. 
+                </h2>
             </section>
             <section className={styles.display}>
                 {/* <div>
