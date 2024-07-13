@@ -1,0 +1,10 @@
+.description {
+    display: flex;
+    margin-left: 5%;
+    width: 65%;
+}
+
+.description p {
+    font-size: 1.5rem;
+    line-height: 2rem;
+}

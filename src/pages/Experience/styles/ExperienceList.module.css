@@ -4,8 +4,8 @@
     gap: 1rem;
     overflow-y: scroll;
     max-height: 20rem;
-    width: 30%;
-    min-width: fit-content;
+    width: 25%;
+    min-width: calc(fit-content + 10%);
 
     display: flex;
     justify-content: space-between;

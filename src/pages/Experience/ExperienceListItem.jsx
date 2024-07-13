@@ -1,15 +1,15 @@
-import ListItemStyles from './styles/ExperienceListItem.module.css'
+import styles from './styles/ExperienceListItem.module.css'
 import { parseExperienceDate } from '../../utils/dateParser';
 
 export default function ExperienceListItem({ experience, isActive, toggleActive }){
     return (
-        <li className={`${ListItemStyles.item} 
-                        ${isActive ? ListItemStyles.active : ListItemStyles.inactive}`} 
+        <li className={`${styles.item} 
+                        ${isActive ? styles.active : styles.inactive}`} 
             onClick={toggleActive}
         >
-            <section className={ListItemStyles.textArea}>
-                <h2 className={ListItemStyles.title}>{experience.title}</h2>
-                <p>{parseExperienceDate(experience.start)} - {parseExperienceDate(experience.end)}  · </p>
+            <section className={styles.textArea}>
+                <h2 className={styles.title}>{experience.title}</h2>
+                <p>{parseExperienceDate(experience.start)} - {parseExperienceDate(experience.end)} · </p>
                 <p>{experience.company}</p>
             </section>
         </li>

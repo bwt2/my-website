@@ -1,7 +1,6 @@
 .item {
     background-color: var(--lighter-bg-color);
     padding: 1rem;
-    padding-left: 30%;
     transition: transform 100ms;
     display: flex;
     justify-content: flex-end;
@@ -10,6 +9,8 @@
 .textArea{
     align-self: flex-end;
     text-align: right;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
 }
 
 .inactive {
