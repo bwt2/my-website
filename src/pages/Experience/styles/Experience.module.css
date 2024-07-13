@@ -1,0 +1,22 @@
+.container {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 0;
+    background-color: var(--light-bg-color);
+}
+
+.container > .experienceDisplay {
+    margin: 0 5%;
+    display: flex;
+}
+
+.container > h1 {
+    align-self: flex-start;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 2rem;
+    font-size: 5rem;
+    font-weight: bold;
+}

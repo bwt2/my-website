@@ -1,0 +1,40 @@
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow-y: scroll;
+    max-height: 25rem;
+    width: 30%;
+    min-width: calc(fit-content + 10%);
+
+    display: flex;
+    justify-content: space-between;
+
+    /* hide scrollbar */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+    position: relative;
+}
+
+.list::before,
+.list::after {
+    background: linear-gradient(0deg, transparent 0%, var(--light-bg-color) 100%);
+    content: '⠀'; /* hack */
+    z-index: 1;
+    width: 100%;
+    padding: 1rem;
+    position: sticky;
+}
+
+.list::before {
+    top: 0;
+}
+
+.list::after{
+    bottom: 0;
+    transform: rotateZ(180deg);
+}
+
+.list::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
