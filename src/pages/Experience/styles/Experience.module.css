@@ -9,6 +9,11 @@
     background-color: var(--light-bg-color);
 }
 
+.container > .experienceDisplay {
+    margin-left: 5%;
+    display: flex;
+}
+
 .container > h1 {
     align-self: flex-start;
     margin-left: 5%;

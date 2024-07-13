@@ -1,0 +1,28 @@
+.item {
+    background-color: var(--lighter-bg-color);
+    padding: 1rem;
+    padding-left: 30%;
+    transition: transform 100ms;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.textArea{
+    align-self: flex-end;
+    text-align: right;
+}
+
+.inactive {
+    transform: translateX(-10%);
+}
+
+.active {
+    transform: translateX(0);
+    background-color: var(--lightest-bg-color);
+}
+
+.title {
+    font-weight: 650;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}

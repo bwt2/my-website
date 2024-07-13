@@ -8,9 +8,9 @@ export default function AboutMe() {
                 <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique, sed at cumque veniam eius alias incidunt cupiditate obcaecati maxime, facere odit quo nihil rem dolore nostrum saepe, impedit illo nesciunt.</h2>
             </section>
             <section className={styles.display}>
-                <div>
+                {/* <div>
                     Weather API call here...
-                </div>
+                </div> */}
             </section>
         </div>
     );
