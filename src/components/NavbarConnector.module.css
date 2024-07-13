@@ -1,0 +1,6 @@
+.connector {
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    color: var(--secondary-text-color);
+}

@@ -4,6 +4,7 @@
 
 .nav {
   min-width: 10vw;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
 .main  {
