@@ -58,4 +58,5 @@ table {
   --main-text-color: rgb(44, 182, 125);
   --secondary-text-color: rgb(30, 131, 89);
   --light-text-color: rgb(63, 255, 175);
+  --nav-width: 10vw;
 }
